@@ -1,0 +1,60 @@
+import React from "react";
+import hero_truck from "../assets/images/hero-truck.jpg";
+import { Link } from "react-router-dom";
+import { Element } from "react-scroll";
+import About from "../components/about/About";
+import Why_choose_us from "../components/why_choose_us/Why_choose_us";
+import Services from "../components/services/Services";
+import Testimonial from "../components/testimonial/Testimonial";
+import Pricing from "../components/pricing/Pricing";
+
+const Home = () => {
+  return (
+    <>
+      {/* Hero Section   */}
+      <div className="relative w-full md:h-[900px] mb-[100px]">
+        <img
+          src={hero_truck}
+          alt=""
+          className="w-full h-[700px] md:h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 top-[170px] left-3 md:left-52">
+          <div className="container">
+            <h1 className="w-[350px] md:w-[900px] text-[32px] md:text-[80px] text-white font-[800] tracking-normal mb-[30px] leading-[50px] md:leading-[100px]">
+              We Deal In All Kinds Of{" "}
+              <span className="text-blue-700">Logistics</span> and{" "}
+              <span className="text-blue-700">Freight</span> Management
+            </h1>
+            <p className="w-[350px] md:w-[800px] text-[18px] md:text-[22px] tracking-widest text-white font-[300] mb-[60px]">
+              Delivering Efficiency, One mile at a time.
+            </p>
+            <Link to="/explore">
+              <button className="w-[200px] h-[60px] border-[1px] border-[#1b265b] border-solid rounded-xl tracking-[3px] font-[600] text-[20px] text-center bg-blue-700 text-white mt-1">
+                Contact Us
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      {/* Hero Section   */}
+      <Element name="about">
+        <About />
+      </Element>
+      <Element name="services">
+        <Services />
+      </Element>
+      <Element name="why_choose_us">
+        <Why_choose_us />
+      </Element>
+      <Element name="pricing">
+        <Pricing />
+      </Element>
+      <Element name="testimonial">
+        <Testimonial />
+      </Element>
+    </>
+  );
+};
+
+export default Home;

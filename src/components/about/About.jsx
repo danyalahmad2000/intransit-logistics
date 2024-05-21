@@ -1,0 +1,44 @@
+import React from "react";
+import aboutImg from "../../assets/images/about.jpg";
+
+const About = () => {
+  return (
+    <>
+      <div className="container flex flex-col md:flex-row justify-between mx-auto mb-[100px] ">
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src={aboutImg}
+            alt=""
+            className="w-[350px] md:w-[600px] h-[800px] object-cover rounded-[50px]"
+          />
+        </div>
+        <div className="w-full md:w-1/2 flex flex-col mt-5 md:mt-0 leading-[40px] md:leading-[70px]">
+          <h2 className="font-[400] text-blue-700 text-[18px] md:text-[28px] ml-2 md:ml-0 mr-2 md:mr-0">
+            About Us
+          </h2>
+          <h1 className=" text-[32px] md:text-[64px] font-[700] mb-5 ml-2 md:ml-0 mr-2 md:mr-0">
+            Our Mission Is To <span className="text-blue-700">Redefine</span>
+          </h1>
+          <p className="text-[18px] md:text-[20px] font-[300] leading-7 md:leading-10 ml-2 md:ml-0 mr-2 md:mr-0 ">
+            Welcome to Intransit Logistics, your premier partner in
+            comprehensive logistics solutions. Specializing in dispatching
+            services and freight management, we go above and beyond to
+            streamline your transportation operations. At Intransit Logistics,
+            we understand the critical role of efficient dispatching and
+            meticulous freight management in the success of your business. With
+            our expert team at the helm, you can trust us to optimize routes,
+            coordinate shipments, and ensure timely deliveries, all while
+            minimizing costs and maximizing efficiency. Whether you're a small
+            business or a large corporation, our personalized approach and
+            dedication to excellence ensure that your logistics needs are met
+            with precision and reliability. Partner with Intransit Logistics
+            today and experience the difference firsthand as we propel your
+            business towards success.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default About;
