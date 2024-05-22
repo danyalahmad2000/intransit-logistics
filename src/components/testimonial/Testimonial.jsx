@@ -7,11 +7,17 @@ import avatarImg1 from "../../assets/images/avatarImg1.jpg";
 import avatarImg2 from "../../assets/images/avatarImg2.jpg";
 import avatarImg3 from "../../assets/images/avatarImg3.jpg";
 import avatarImg4 from "../../assets/images/avatarImg4.jpg";
+import avatarImg5 from "../../assets/images/avatarImg5.jpg";
+import avatarImg6 from "../../assets/images/avatarImg6.jpg";
 import { HiStar } from "react-icons/hi";
 
 const Testimonial = () => {
   return (
     <>
+      <h1 className=" text-[32px] md:text-[64px] font-[700] mb-5 ml-2 md:ml-0 mr-2 md:mr-0 text-center mt-10">
+            What Our Clients{" "}
+            <span className="text-blue-700">Say</span>
+          </h1>
       <div className="w-full bg-slate-100">
         <div className="my-[100px] lg:mt-[55px]  container mx-auto">
           <Swiper
@@ -156,7 +162,7 @@ const Testimonial = () => {
               <div className="py-[30px] px-5 rounded-3">
                 <div className="flex items-center gap-[13px]">
                   <img
-                    src={avatarImg1}
+                    src={avatarImg5}
                     alt=""
                     className="size-[50px] rounded-full object-cover"
                   />
@@ -185,13 +191,13 @@ const Testimonial = () => {
               <div className="py-[30px] px-5 rounded-3">
                 <div className="flex items-center gap-[13px]">
                   <img
-                    src={avatarImg3}
+                    src={avatarImg6}
                     alt=""
-                    className="size-[50px] rounded-full object-cover"
+                    className="size-[50px] rounded-full object-contain"
                   />
                   <div>
                     <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                      Charles Alexander
+                      Martinez Santiago
                     </h4>
                     <div className="flex items-center gap-[2px]">
                       <HiStar className="text-yellow-500 w-[18px] h-5" />

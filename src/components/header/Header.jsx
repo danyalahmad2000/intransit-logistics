@@ -31,9 +31,9 @@ const Header = () => {
 
   return (
     <header className="sticky-header">
-      <div className="max-w-full h-[125px] flex md:pr-2 lg:pr-2">
+      <div className="max-w-full flex md:pr-2 lg:pr-2">
         <div className="container mx-auto flex flex-row justify-between items-center">
-          <div className="w-[175px] h-[120px] flex items-center justify-center">
+          <div className="w-[175px] h-[80px] flex items-center justify-center">
             <img src={logo} alt="" className="w-full h-full text-white" />
           </div>
           <div className="hidden md:flex items-center">
@@ -41,7 +41,7 @@ const Header = () => {
               <div key={index} className="relative group">
                 <ScrollLink
                   to={link.to}
-                  className="font-[700] text-[20px] px-4 mx-5 cursor-pointer"
+                  className="font-[500] text-[16px] px-4 mx-10 cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out hover:text-[20px] hover:font-bold"
                   spy={true}
                   smooth={true}
                   offset={-70} // adjust the offset as per your header's height
@@ -53,7 +53,7 @@ const Header = () => {
             ))}
           </div>
 
-          <button className="w-[150px] h-[60px] border-[1px] border-[#1b265b] border-solid rounded-xl tracking-[3px] font-[800] text-[16px] text-center hover:text-white hover:bg-blue-700 md:block hidden items-center">
+          <button className="w-[130px] h-[50px] border-[1px] border-blue-700 border-solid rounded-xl font-[500] text-[16px] text-center hover:text-white hover:bg-blue-700 md:block hidden items-center">
             <ScrollLink >Contact Us</ScrollLink>
           </button>
           

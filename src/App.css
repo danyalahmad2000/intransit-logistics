@@ -23,3 +23,112 @@ body {
   opacity: 1; /* Set opacity to 1 to reveal the dropdown content */
   z-index: 1000;
 }
+
+/* Add this to your CSS file */
+
+#pricing-section .pricing-card {
+  opacity: 0;
+  transform: translateX(0);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  #pricing-section.animate .pricing-card {
+    opacity: 1;
+  }
+
+  #pricing-section.animate .pricing-card:nth-child(1) {
+    transform: translateX(-30%);
+  }
+
+  #pricing-section.animate .pricing-card:nth-child(2) {
+    transform: translateX(0);
+  }
+
+  #pricing-section.animate .pricing-card:nth-child(3) {
+    transform: translateX(30%);
+  }
+}
+
+/* Small screens */
+@media (max-width: 1023px) {
+  #pricing-section .pricing-card {
+    transform: translateY(50px);
+  }
+
+  #pricing-section.animate .pricing-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add this to your CSS file */
+
+/* Initial states for the animations */
+.hero-h1 {
+  opacity: 0;
+  transform: translateX(-300px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.hero-p {
+  opacity: 0;
+  transform: translateX(300px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.hero-button {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+/* Animated states */
+.hero-h1.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-p.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-button.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.swiper-pagination-bullet{
+  width:12px !important;
+  height:12px !important;
+  border:1px solid #181a1e !important;
+  opacity:100% !important;
+  background: #fff !important;
+}
+
+.swiper-pagination-bullet-active{
+  background: #403398 !important;
+  border:none !important;
+}
+
+.swiper {
+  padding-bottom:70px !important;
+}
+
+.swiper-slide.swiper-slide-next{
+  background: #1D4ED8;
+  border-radius: 12px;
+  box-shadow: 0px 20px 70px #1D4ED8 !important;
+}
+
+.swiper-slide.swiper-slide-next h4,
+.swiper-slide.swiper-slide-next p{
+  color: #fff !important;
+}
+
+.swiper-pagination{
+  top:90% !important;
+}
