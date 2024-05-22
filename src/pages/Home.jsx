@@ -9,6 +9,7 @@ import Services from "../components/services/Services";
 import Testimonial from "../components/testimonial/Testimonial";
 import Pricing from "../components/pricing/Pricing";
 import ContactUs from "../components/contactUs/ContactUs";
+import Partners from "../components/partners/Partners";
 
 const Home = () => {
   return (
@@ -59,7 +60,12 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
+
+
       {/* Hero Section   */}
+      <Element name="partners">
+        <Partners />
+      </Element>
       <Element name="about">
         <About />
       </Element>
@@ -74,6 +80,9 @@ const Home = () => {
       </Element>
       <Element name="testimonial">
         <Testimonial />
+      </Element>
+      <Element name="partners">
+        <Partners />
       </Element>
 
       <ContactUs />

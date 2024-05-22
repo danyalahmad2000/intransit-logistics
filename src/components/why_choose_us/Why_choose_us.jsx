@@ -7,17 +7,17 @@ import { FaCheckCircle } from "react-icons/fa";
 const WhyChooseUs = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5 // Adjust threshold as needed
+    threshold: 0.5, // Adjust threshold as needed
   });
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const textVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -36,8 +36,7 @@ const WhyChooseUs = () => {
           Why Choose Us
         </h2>
         <h1 className=" text-[32px] md:text-[64px] font-[700] mb-5 ml-2 md:ml-0 mr-2 md:mr-0">
-          We Deliver Unmatched{" "}
-          <span className="text-blue-700">Excellence</span>
+          We Deliver Unmatched <span className="text-blue-700">Excellence</span>
         </h1>
         <motion.p
           className="text-[18px] md:text-[20px] font-[300] leading-7 md:leading-10 ml-2 md:ml-0 mr-2 md:mr-0 mb-5"
@@ -56,10 +55,9 @@ const WhyChooseUs = () => {
           customer-centric focus means we tailor our services to meet your
           specific needs, ensuring a personalized and responsive experience.
           Additionally, our robust network and strategic partnerships enable us
-          to offer competitive rates and flexible solutions that scale with
-          your business growth. Choose Intransit Logistics for reliable,
-          efficient, and customized logistics solutions that drive your business
-          forward.
+          to offer competitive rates and flexible solutions that scale with your
+          business growth. Choose Intransit Logistics for reliable, efficient,
+          and customized logistics solutions that drive your business forward.
         </motion.p>
         <motion.p
           className="flex flex-row items-center ml-2 md:ml-0"
