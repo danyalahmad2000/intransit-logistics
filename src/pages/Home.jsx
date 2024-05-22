@@ -81,9 +81,6 @@ const Home = () => {
       <Element name="testimonial">
         <Testimonial />
       </Element>
-      <Element name="partners">
-        <Partners />
-      </Element>
 
       <ContactUs />
     </>
