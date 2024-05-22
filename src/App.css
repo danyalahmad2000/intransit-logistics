@@ -65,40 +65,7 @@ body {
 
 /* Add this to your CSS file */
 
-/* Initial states for the animations */
-.hero-h1 {
-  opacity: 0;
-  transform: translateX(-300px);
-  transition: opacity 2s ease-out, transform 2s ease-out;
-}
 
-.hero-p {
-  opacity: 0;
-  transform: translateX(300px);
-  transition: opacity 2s ease-out, transform 2s ease-out;
-}
-
-.hero-button {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 2s ease-out, transform 2s ease-out;
-}
-
-/* Animated states */
-.hero-h1.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.hero-p.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.hero-button.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 
 .swiper-pagination-bullet{
