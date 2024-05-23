@@ -17,13 +17,13 @@ const Partners = () => {
           Our Partnered Brokerage <span className="text-blue-700">Companies</span>
         </h1>
       </div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-4 items-center circle-animation">
+      <div className="container mx-auto flex flex-row flex-wrap gap-36 justify-center md:justify-between items-center circle-animation">
         {partnerImages.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Partner ${index + 1}`}
-            className="w-[300px] object-cover md:ml-24 ml-12 md:ml-0"
+            className="w-[300px] object-cover"
           />
         ))}
       </div>
