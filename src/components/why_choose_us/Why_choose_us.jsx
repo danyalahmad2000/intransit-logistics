@@ -11,23 +11,22 @@ const Why_choose_us = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (whyChooseUsRef.current && !hasAnimated) {
-        const top = aboutRef.current.getBoundingClientRect().top;
+        const top = whyChooseUsRef.current.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        if (top < windowHeight && top > 0) { // Element starts to be visible in the viewport
+        if (top < windowHeight && top > 0) {
           setIsVisible(true);
           setHasAnimated(true);
         }
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check in case the component is already in view
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [whyChooseUsRef, hasAnimated, setIsVisible, setHasAnimated]);
-  
+  }, [hasAnimated]);
 
   return (
     <div ref={whyChooseUsRef} className="container flex flex-col md:flex-row justify-between mx-auto mb-[100px]">

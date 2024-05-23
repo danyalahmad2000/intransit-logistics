@@ -18,15 +18,14 @@ const About = () => {
         }
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check in case the component is already in view
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [aboutRef, hasAnimated, setIsVisible, setHasAnimated]);
-  
+  }, [hasAnimated]);
 
   return (
     <div ref={aboutRef} className="container flex flex-col md:flex-row justify-between mx-auto mb-[100px]">
