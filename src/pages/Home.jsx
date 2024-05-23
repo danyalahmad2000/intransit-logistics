@@ -23,7 +23,7 @@ const Home = () => {
         />
         <div className="w-full absolute inset-0 bg-black opacity-70"></div>
         <div className="absolute inset-0 top-[170px] xl:left-52 lg:left-16">
-          <div className="container pl-5">
+          <div className="container pl-2">
             <h1 className="w-[350px] md:w-[900px] text-[32px] md:text-[80px] text-white font-[800] tracking-normal mb-[30px] leading-[50px] md:leading-[100px] slide-from-left">
               We Deal In All Kinds Of{" "}
               <span className="text-blue-700">Logistics</span> and{" "}
