@@ -32,15 +32,15 @@
   }
   
   .slide-from-left {
-    animation: slideFromLeft 2s ease-in-out forwards;
+    animation: slideFromLeft 1s ease-in-out forwards;
   }
   
   .slide-from-right {
-    animation: slideFromRight 2s ease-in-out forwards;
+    animation: slideFromRight 1s ease-in-out forwards;
   }
   
   .slide-from-bottom {
-    animation: slideFromBottom 2s ease-in-out forwards;
+    animation: slideFromBottom 1s ease-in-out forwards;
   }
 
   @keyframes airyEffect {
