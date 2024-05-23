@@ -1,12 +1,39 @@
-import React from "react";
-import "./Pricing.css"
+import React, { useEffect, useState, useRef } from "react";
+import "./Pricing.css";
 
 const Pricing = () => {
+  const pricingRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (pricingRef.current && !hasAnimated) {
+        const top = pricingRef.current.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight && top > 0) {
+          setIsVisible(true);
+          setHasAnimated(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check in case the component is already in view
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasAnimated]);
+
   return (
     <>
-      <section className="bg-white dark:bg-gray-900 overflow-hidden relative">
+    <section
+      ref={pricingRef}
+      className="bg-white dark:bg-gray-900 overflow-hidden relative"
+    >
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-          <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+          <div className={`mx-auto max-w-screen-md text-center mb-8 lg:mb-12 ${isVisible ? 'slide-from-bottom' : ''}`}>
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Designed for business teams like yours
             </h2>
@@ -17,7 +44,7 @@ const Pricing = () => {
             </p>
           </div>
           <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-            <div className="left-card-animation flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white ${isVisible ? 'left-card-animation' : ''}`}>
               <h3 className="mb-4 text-2xl font-semibold">Flatbed's</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 53 ft. Flatbeds
@@ -69,7 +96,7 @@ const Pricing = () => {
                 Get started
               </a>
             </div>
-            <div className="right-card-animation flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white ${isVisible ? 'right-card-animation' : ''}`}>
               <h3 className="mb-4 text-2xl font-semibold">Semi Trucks</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 48-53 ft. Dry Vans

@@ -5,7 +5,6 @@ import amazon_relay from "../../assets/images/amazon_relay.png";
 import globaltranz from "../../assets/images/globaltranz.png";
 import millhouse from "../../assets/images/millhouse.png";
 import ch_robinson from "../../assets/images/ch_robinson.png";
-import "./Partners.css"; // Import CSS file for animations
 
 const Partners = () => {
   const partnerImages = [tqlImg, jbhuntImg, amazon_relay, globaltranz, millhouse, ch_robinson];
@@ -17,7 +16,7 @@ const Partners = () => {
           Our Partnered Brokerage <span className="text-blue-700">Companies</span>
         </h1>
       </div>
-      <div className="container mx-auto flex flex-row flex-wrap gap-36 justify-center md:justify-between items-center circle-animation">
+      <div className="container mx-auto flex flex-row flex-wrap gap-36 justify-center md:justify-between items-center">
         {partnerImages.map((image, index) => (
           <img
             key={index}

@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import aboutImg from "../../assets/images/about.jpg";
-import "./About.css"
+import "./About.css";
 
 const About = () => {
+  const aboutRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (aboutRef.current && !hasAnimated) {
+        const top = aboutRef.current.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight && top > 0) { // Element starts to be visible in the viewport
+          setIsVisible(true);
+          setHasAnimated(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check in case the component is already in view
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasAnimated]);
+
   return (
-    <div className="container flex flex-col md:flex-row justify-between mx-auto mb-[100px]">
-      <div className="w-full md:w-1/2 flex justify-center slide-from-left">
+    <div ref={aboutRef} className="container flex flex-col md:flex-row justify-between mx-auto mb-[100px]">
+      <div className={`w-full md:w-1/2 flex justify-center ${isVisible ? 'slide-from-left' : ''}`}>
         <img
           src={aboutImg}
           alt=""
@@ -13,13 +37,13 @@ const About = () => {
         />
       </div>
       <div className="w-full md:w-1/2 flex flex-col mt-5 md:mt-0 leading-[40px] md:leading-[70px]">
-        <h2 className="font-[400] text-blue-700 text-[18px] md:text-[28px] ml-5 md:ml-0 mr-5 md:mr-0 slide-from-bottom">
+        <h2 className={`font-[400] text-blue-700 text-[18px] md:text-[28px] ml-5 md:ml-0 mr-5 md:mr-0 ${isVisible ? 'slide-from-bottom' : ''}`}>
           About Us
         </h2>
-        <h1 className=" text-[32px] md:text-[64px] font-[700] mb-5 ml-5 md:ml-0 mr-5 md:mr-0 airiness">
+        <h1 className={`text-[32px] md:text-[64px] font-[700] mb-5 ml-5 md:ml-0 mr-5 md:mr-0 ${isVisible ? 'slide-from-right' : ''}`} >
           Our Mission Is To <span className="text-blue-700">Redefine</span>
         </h1>
-        <p className="text-[18px] md:text-[20px] font-[300] leading-7 md:leading-10 ml-5 md:ml-0 mr-5 md:mr-0 slide-from-right">
+        <p className={`text-[18px] md:text-[20px] font-[300] leading-7 md:leading-10 ml-5 md:ml-0 mr-5 md:mr-0 ${isVisible ? 'slide-from-left' : ''}`}>
           Welcome to Intransit Logistics, your premier partner in comprehensive
           logistics solutions. Specializing in dispatching services and freight
           management, we go above and beyond to streamline your transportation

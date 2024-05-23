@@ -10,6 +10,7 @@ import avatarImg4 from "../../assets/images/avatarImg4.jpg";
 import avatarImg5 from "../../assets/images/avatarImg5.jpg";
 import avatarImg6 from "../../assets/images/avatarImg6.jpg";
 import { HiStar } from "react-icons/hi";
+import "../../App.css"
 
 const Testimonial = () => {
   return (

@@ -1,24 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import './ContactUs.css'; // Import the CSS file with animations
+import React, { useEffect, useState, useRef } from 'react';
 
 const ContactUs = () => {
-  const [animationClass, setAnimationClass] = useState('');
+  const contactUsRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    // Trigger animation when component mounts
-    setAnimationClass('section-animation');
-  }, []);
+    const handleScroll = () => {
+      if (contactUsRef.current && !hasAnimated) {
+        const top = contactUsRef.current.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight && top > 0) {
+          setIsVisible(true);
+          setHasAnimated(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check in case the component is already in view
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasAnimated]);
 
   return (
-    <section className={`bg-white dark:bg-gray-900 ${animationClass}`}>
+    <section ref={contactUsRef} className="bg-white dark:bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+        <h2 className={`mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white ${isVisible ? 'slide-from-left' : ''}`}>
           Contact Us
         </h2>
-        <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+        <p className={`mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl ${isVisible ? 'slide-from-bottom' : ''}`}>
           Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.
         </p>
-        <form action="#" className="space-y-8">
+        <form action="#" className={`space-y-8 ${isVisible ? 'slide-from-right' : ''}`}>
           <div>
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
               Your email
@@ -27,7 +43,7 @@ const ContactUs = () => {
               type="email"
               id="email"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-              placeholder="name@flowbite.com"
+              placeholder="name@theitlogistics.com"
               required
             />
           </div>

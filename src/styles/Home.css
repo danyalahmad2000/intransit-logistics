@@ -22,7 +22,7 @@
   
   @keyframes slideFromBottom {
     from {
-      transform: translateY(800%);
+      transform: translateY(200%);
       opacity: 0;
     }
     to {
@@ -32,11 +32,11 @@
   }
   
   .slide-from-left {
-    animation: slideFromLeft 2s ease-in-out forwards;
+    animation: slideFromLeft 3s ease-in-out forwards;
   }
   
   .slide-from-right {
-    animation: slideFromRight 2s ease-in-out forwards;
+    animation: slideFromRight 3s ease-in-out forwards;
   }
   
   .slide-from-bottom {
@@ -61,5 +61,4 @@
   .airiness {
     animation: airyEffect 3s ease-in-out forwards;
   }
-  
   
