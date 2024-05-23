@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom"; // If using React Router for navigation
 import logo from "../../assets/images/logo.svg";
 
 const navLinks = [
@@ -19,7 +20,6 @@ const navLinks = [
     to: "pricing",
     display: "Pricing",
   },
-  
 ];
 
 const Header = () => {
@@ -44,7 +44,7 @@ const Header = () => {
                   className="font-[500] text-[16px] px-4 mx-10 cursor-pointer hover:text-blue-700 transition-all duration-300 ease-in-out hover:text-[20px] hover:font-bold"
                   spy={true}
                   smooth={true}
-                  offset={-70} // adjust the offset as per your header's height
+                  offset={-200} // adjust the offset as per your header's height
                   duration={500}
                 >
                   {link.display}
@@ -53,10 +53,23 @@ const Header = () => {
             ))}
           </div>
 
-          <button className="w-[130px] h-[50px] border-[1px] border-blue-700 border-solid rounded-xl font-[500] text-[16px] text-center hover:text-white hover:bg-blue-700 md:block hidden items-center">
-            <ScrollLink >Contact Us</ScrollLink>
+          <button
+            className="w-[130px] h-[50px] border-[1px] border-blue-700 border-solid rounded-xl font-[500] text-[16px] text-center hover:text-white hover:bg-blue-700 md:block hidden items-center"
+            onClick={() => {
+              const contactUsElement = document.getElementById("contactUs");
+              const offset = 70; // Adjust the offset as needed
+              if (contactUsElement) {
+                const topPos = contactUsElement.offsetTop - offset;
+                window.scrollTo({
+                  top: topPos,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
+            Contact Us
           </button>
-          
+
           <button className="md:hidden" onClick={toggleNav}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

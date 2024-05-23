@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import hero_truck from "../assets/images/hero-truck.jpg";
-import { Link } from "react-router-dom";
-import { Element } from "react-scroll";
+import { Element, scroller } from "react-scroll"; // Import scroller from react-scroll
 import About from "../components/about/About";
 import WhyChooseUs from "../components/why_choose_us/Why_choose_us";
 import Services from "../components/services/Services";
@@ -36,6 +35,14 @@ const Home = () => {
     };
   }, [heroAnimated]);
 
+  const scrollToContactUs = () => {
+    scroller.scrollTo("contactUs", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -49,22 +56,27 @@ const Home = () => {
         <div className="absolute inset-0 top-[170px] xl:left-52 lg:left-16">
           <div className="container pl-2">
             <h1
-              className={`w-[350px] md:w-[900px] text-[32px] md:text-[80px] text-white font-[800] tracking-normal mb-[30px] leading-[50px] md:leading-[100px] ${heroVisible ? 'slide-from-left' : ''}`}
+              className={`w-[350px] md:w-[900px] text-[32px] md:text-[80px] text-white font-[800] tracking-normal mb-[30px] leading-[50px] md:leading-[100px] ${
+                heroVisible ? "slide-from-left" : ""
+              }`}
             >
               We Deal In All Kinds Of{" "}
               <span className="text-blue-700">Logistics</span> and{" "}
               <span className="text-blue-700">Freight</span> Management
             </h1>
             <p
-              className={`w-[350px] md:w-[800px] text-[18px] md:text-[22px] tracking-widest text-white font-[300] mb-[60px] ${heroVisible ? 'slide-from-right' : ''}`}
+              className={`w-[350px] md:w-[800px] text-[18px] md:text-[22px] tracking-widest text-white font-[300] mb-[60px] ${
+                heroVisible ? "slide-from-right" : ""
+              }`}
             >
               Delivering Efficiency, One mile at a time.
             </p>
-            <Link to="/explore">
-              <button className="w-[200px] h-[60px] border-[1px] border-[#1b265b] border-solid rounded-xl tracking-[3px] font-[600] text-[20px] text-center bg-blue-700 text-white mt-1 airiness">
-                Contact Us
-              </button>
-            </Link>
+            <button
+              onClick={scrollToContactUs}
+              className="w-[200px] h-[60px] border-[1px] border-[#1b265b] border-solid rounded-xl tracking-[3px] font-[600] text-[20px] text-center bg-blue-700 text-white mt-1 airiness"
+            >
+              Contact Us
+            </button>
           </div>
         </div>
       </div>
@@ -100,7 +112,9 @@ const Home = () => {
       </Element>
 
       {/* Contact Us Section */}
-      <ContactUs />
+      <Element name="contactUs">
+        <ContactUs />
+      </Element>
     </>
   );
 };
