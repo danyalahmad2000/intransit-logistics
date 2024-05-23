@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-[10px] md:gap-[100px] items-start mt-8 md:mt-0 tracking-[2px] ">
+        <div className="flex flex-col md:flex-row gap-[10px] md:gap-[100px] items-start mt-8 md:mt-0 tracking-[2px] pl-3 ">
           <div className="flex flex-row items-center gap-2">
             <IoIosCall className="text-[28px] text-blue-700" />
             <p className="">+1 (254)-256-2500</p>
