@@ -1,0 +1,30 @@
+@keyframes leftCardAnimation {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightCardAnimation {
+  0% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+.left-card-animation {
+  animation: leftCardAnimation 3s ease-in-out forwards;
+}
+
+.right-card-animation {
+  animation: rightCardAnimation 3s ease-in-out forwards;
+}

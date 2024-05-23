@@ -5,9 +5,9 @@ import amazon_relay from "../../assets/images/amazon_relay.png";
 import globaltranz from "../../assets/images/globaltranz.png";
 import millhouse from "../../assets/images/millhouse.png";
 import ch_robinson from "../../assets/images/ch_robinson.png";
+import "./Partners.css"; // Import CSS file for animations
 
 const Partners = () => {
-  // Array of partner images
   const partnerImages = [tqlImg, jbhuntImg, amazon_relay, globaltranz, millhouse, ch_robinson];
 
   return (
@@ -17,13 +17,13 @@ const Partners = () => {
           Our Partnered Brokerage <span className="text-blue-700">Companies</span>
         </h1>
       </div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-4 items-center">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 p-4 items-center circle-animation">
         {partnerImages.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Partner ${index + 1}`}
-            className="w-[300px] object-cover md:ml-24"
+            className="w-[300px] object-cover md:ml-24 ml-12 md:ml-0"
           />
         ))}
       </div>

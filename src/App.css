@@ -24,48 +24,6 @@ body {
   z-index: 1000;
 }
 
-/* Add this to your CSS file */
-
-#pricing-section .pricing-card {
-  opacity: 0;
-  transform: translateX(0);
-  transition: transform 1s ease-out, opacity 1s ease-out;
-}
-
-/* Large screens */
-@media (min-width: 1024px) {
-  #pricing-section.animate .pricing-card {
-    opacity: 1;
-  }
-
-  #pricing-section.animate .pricing-card:nth-child(1) {
-    transform: translateX(-30%);
-  }
-
-  #pricing-section.animate .pricing-card:nth-child(2) {
-    transform: translateX(0);
-  }
-
-  #pricing-section.animate .pricing-card:nth-child(3) {
-    transform: translateX(30%);
-  }
-}
-
-/* Small screens */
-@media (max-width: 1023px) {
-  #pricing-section .pricing-card {
-    transform: translateY(50px);
-  }
-
-  #pricing-section.animate .pricing-card {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Add this to your CSS file */
-
-
 
 
 .swiper-pagination-bullet{
@@ -99,3 +57,69 @@ body {
 .swiper-pagination{
   top:90% !important;
 }
+
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-from-left {
+  animation: slideFromLeft 3s ease-in-out forwards;
+}
+
+.slide-from-right {
+  animation: slideFromRight 3s ease-in-out forwards;
+}
+
+.slide-from-bottom {
+  animation: slideFromBottom 3s ease-in-out forwards;
+}
+
+@keyframes airyEffect {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.airiness {
+  animation: airyEffect 3s ease-in-out forwards;
+}
+
