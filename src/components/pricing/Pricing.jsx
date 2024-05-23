@@ -69,7 +69,7 @@ const Pricing = () => {
                 Get started
               </a>
             </div>
-            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-gray-800 dark:text-white">
+            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-gray-800 dark:text-white">
               <h3 className="mb-4 text-2xl font-semibold">
                 Straight Box Trucks
               </h3>
@@ -96,7 +96,7 @@ const Pricing = () => {
                 Get started
               </a>
             </div>
-            <div className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-gray-800 dark:text-white ${isVisible ? 'right-card-animation' : ''}`}>
+            <div className={`flex flex-col p-6 mx-auto max-w-lg text-center text-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-gray-800 dark:text-white ${isVisible ? 'right-card-animation' : ''}`}>
               <h3 className="mb-4 text-2xl font-semibold">Semi Trucks</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 48-53 ft. Dry Vans
