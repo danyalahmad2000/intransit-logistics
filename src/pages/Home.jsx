@@ -21,19 +21,19 @@ const Home = () => {
           alt="Hero Truck"
           className="w-full h-[700px] md:h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="w-full absolute inset-0 bg-black opacity-70"></div>
         <div className="absolute inset-0 top-[170px] xl:left-52 lg:left-16">
-          <div className="w-full md:container ml-5 md:ml-0">
-            <h1 className="hero-content w-[350px] md:w-[900px] text-[32px] md:text-[80px] text-white font-[800] tracking-normal mb-[30px] leading-[50px] md:leading-[100px] slide-from-left">
+          <div className="container pl-5">
+            <h1 className="w-[350px] md:w-[900px] text-[32px] md:text-[80px] text-white font-[800] tracking-normal mb-[30px] leading-[50px] md:leading-[100px] slide-from-left">
               We Deal In All Kinds Of{" "}
               <span className="text-blue-700">Logistics</span> and{" "}
               <span className="text-blue-700">Freight</span> Management
             </h1>
-            <p className="hero-content w-[350px] md:w-[800px] text-[18px] md:text-[22px] tracking-widest text-white font-[300] mb-[60px] slide-from-right">
+            <p className="w-[350px] md:w-[800px] text-[18px] md:text-[22px] tracking-widest text-white font-[300] mb-[60px] slide-from-right">
               Delivering Efficiency, One mile at a time.
             </p>
             <Link to="/explore">
-              <button className="hero-content w-[200px] h-[60px] border-[1px] border-[#1b265b] border-solid rounded-xl tracking-[3px] font-[600] text-[20px] text-center bg-blue-700 text-white mt-1 airiness">
+              <button className="w-[200px] h-[60px] border-[1px] border-[#1b265b] border-solid rounded-xl tracking-[3px] font-[600] text-[20px] text-center bg-blue-700 text-white mt-1 airiness">
                 Contact Us
               </button>
             </Link>
